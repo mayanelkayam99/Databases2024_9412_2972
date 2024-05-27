@@ -1,0 +1,9 @@
+drop table uses;
+drop table teaches_the;
+drop table belongs;
+drop table StudentsGroup;
+drop table Room;
+drop table lecturers;
+drop table Participants;
+drop table Courses;
+drop table Equipment;
