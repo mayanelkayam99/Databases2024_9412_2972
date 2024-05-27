@@ -1,0 +1,10 @@
+Basic Life Support,11,Medical,Required,None
+First Aid Cert,12,Medical,Required,Basic Life Support
+EM Technician,13,Medical,Required,First Aid Cert
+Adv Trauma Life Sup,14,Medical,Required,Basic Life Support
+Ped Adv Life Support,15,Medical,Required,Basic Life Support
+Fire Safety Training,16,Safety,Required,None
+Disaster Response,17,Management,Optional,Fire Safety Training
+Occupational Health,18,Safety,Required,None
+Remote Emerg Care,19,Medical,Optional,First Aid Cert
+Epidemic Preparedness,20,Medical,Required,Occupational Health

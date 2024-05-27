@@ -1,0 +1,10 @@
+insert into Room (r_id, r_location, numplace, r_type) values (11, 'Building D, Floor 2', 49, 'Classroom');
+insert into Room (r_id, r_location, numplace, r_type) values (12, 'Building C, Floor 3', 32, 'Lecture Hall');
+insert into Room (r_id, r_location, numplace, r_type) values (13, 'Building D, Floor 3', 44, 'Training Room');
+insert into Room (r_id, r_location, numplace, r_type) values (14, 'Building A, Floor 1', 47, 'Seminar Room');
+insert into Room (r_id, r_location, numplace, r_type) values (15, 'Building D, Floor 3', 30, 'Computer Lab');
+insert into Room (r_id, r_location, numplace, r_type) values (16, 'Building B, Floor 1', 48, 'Auditorium');
+insert into Room (r_id, r_location, numplace, r_type) values (17, 'Building A, Floor 1', 43, 'Conference Room');
+insert into Room (r_id, r_location, numplace, r_type) values (18, 'Building B, Floor 1', 32, 'Workshop Room');
+insert into Room (r_id, r_location, numplace, r_type) values (19, 'Building D, Floor 3', 55, 'Training Center');
+insert into Room (r_id, r_location, numplace, r_type) values (20, 'Building C, Floor 2', 57, 'Discussion Room');
