@@ -98,16 +98,6 @@ INSERT INTO teaches_the (l_Id, c_Id) VALUES (117, 5);
 INSERT INTO teaches_the (l_Id, c_Id) VALUES (118, 3); 
 INSERT INTO teaches_the (l_Id, c_Id) VALUES (119, 8); 
 INSERT INTO teaches_the (l_Id, c_Id) VALUES (120, 10);
---DELETE
---DELETE FROM uses;
---DELETE FROM belongs;
---DELETE FROM teaches_the;
---DELETE FROM Participants;
---DELETE FROM StudentsGroup;
---DELETE FROM Equipment;
---DELETE FROM Courses;
---DELETE FROM lecturers;
---DELETE FROM Room;
 
 
 
