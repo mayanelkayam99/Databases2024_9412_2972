@@ -7,6 +7,3 @@ select * from Courses;
 select * from belongs;
 select * from teaches_the;
 select * from uses;
-
-DELETE FROM Courses
-WHERE c_id>10;
