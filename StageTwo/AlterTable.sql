@@ -1,0 +1,7 @@
+ALTER TABLE Participants
+ADD age NUMBER;
+
+UPDATE Participants SET age = EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM p_date);
+
+
+
