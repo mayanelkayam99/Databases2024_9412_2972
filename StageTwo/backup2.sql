@@ -11,33 +11,10 @@ create table PARTICIPANTS
   p_role VARCHAR2(30) not null,
   gender VARCHAR2(30) not null,
   age    NUMBER
-)
-tablespace SYSTEM
-  pctfree 10
-  pctused 40
-  initrans 1
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+);
 alter table PARTICIPANTS
   add primary key (P_ID)
-  using index 
-  tablespace SYSTEM
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+  ;
 alter table PARTICIPANTS
   add constraint CHK_P_ROLE_VALUES
   check (p_role IN ('Certified Nurse','First Responder','EMT','Paramedic'));
@@ -51,32 +28,10 @@ create table COURSES
   presence   VARCHAR2(30) not null,
   pre_course VARCHAR2(30) not null
 )
-tablespace SYSTEM
-  pctfree 10
-  pctused 40
-  initrans 1
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+;
 alter table COURSES
   add primary key (C_ID)
-  using index 
-  tablespace SYSTEM
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+  ;
 
 prompt Creating LECTURERS...
 create table LECTURERS
@@ -87,32 +42,10 @@ create table LECTURERS
   seniority VARCHAR2(30) not null,
   training  VARCHAR2(30) not null
 )
-tablespace SYSTEM
-  pctfree 10
-  pctused 40
-  initrans 1
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+;
 alter table LECTURERS
   add primary key (L_ID)
-  using index 
-  tablespace SYSTEM
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+  ;
 alter table LECTURERS
   add constraint CHK_L_DATE_BEFORE_2025
   check (l_date < TO_DATE('2025-01-01','YYYY-MM-DD'));
@@ -125,32 +58,10 @@ create table ROOM
   numplace   NUMBER(5) not null,
   r_type     VARCHAR2(30) not null
 )
-tablespace SYSTEM
-  pctfree 10
-  pctused 40
-  initrans 1
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+;
 alter table ROOM
   add primary key (R_ID)
-  using index 
-  tablespace SYSTEM
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+ ;
 
 prompt Creating STUDENTSGROUP...
 create table STUDENTSGROUP
@@ -163,32 +74,10 @@ create table STUDENTSGROUP
   c_id   NUMBER(10) not null,
   l_id   NUMBER(10) not null
 )
-tablespace SYSTEM
-  pctfree 10
-  pctused 40
-  initrans 1
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+;
 alter table STUDENTSGROUP
   add primary key (G_ID)
-  using index 
-  tablespace SYSTEM
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+  ;
 alter table STUDENTSGROUP
   add foreign key (R_ID)
   references ROOM (R_ID);
@@ -205,32 +94,10 @@ create table BELONGS
   g_id NUMBER(10) not null,
   p_id NUMBER(10) not null
 )
-tablespace SYSTEM
-  pctfree 10
-  pctused 40
-  initrans 1
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+;
 alter table BELONGS
   add primary key (G_ID, P_ID)
-  using index 
-  tablespace SYSTEM
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+  ;
 alter table BELONGS
   add foreign key (G_ID)
   references STUDENTSGROUP (G_ID);
@@ -246,32 +113,10 @@ create table EQUIPMENT
   e_name VARCHAR2(30) not null,
   amount NUMBER(5) not null
 )
-tablespace SYSTEM
-  pctfree 10
-  pctused 40
-  initrans 1
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+;
 alter table EQUIPMENT
   add primary key (E_ID)
-  using index 
-  tablespace SYSTEM
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+  ;
 alter table EQUIPMENT
   add constraint CHK_AMOUNT_NONNEGATIVE
   check (amount>=0);
@@ -282,32 +127,10 @@ create table TEACHES_THE
   l_id NUMBER(10) not null,
   c_id NUMBER(10) not null
 )
-tablespace SYSTEM
-  pctfree 10
-  pctused 40
-  initrans 1
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+;
 alter table TEACHES_THE
   add primary key (L_ID, C_ID)
-  using index 
-  tablespace SYSTEM
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+  ;
 alter table TEACHES_THE
   add foreign key (L_ID)
   references LECTURERS (L_ID);
@@ -321,32 +144,10 @@ create table USES
   c_id NUMBER(10) not null,
   e_id NUMBER(10) not null
 )
-tablespace SYSTEM
-  pctfree 10
-  pctused 40
-  initrans 1
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+;
 alter table USES
   add primary key (C_ID, E_ID)
-  using index 
-  tablespace SYSTEM
-  pctfree 10
-  initrans 2
-  maxtrans 255
-  storage
-  (
-    initial 64K
-    next 1M
-    minextents 1
-    maxextents unlimited
-  );
+  ;
 alter table USES
   add foreign key (C_ID)
   references COURSES (C_ID);
